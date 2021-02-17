@@ -144,7 +144,7 @@
             jsonDataObject.push(json_data);
                 
             for (var j = 0; j < jsonDataObject.length; j++) {
-                
+                /*
                 var current_color = '';
                 if ((jsonDataObject[j].OrderDispatched = "YES")&&(jsonDataObject[j].OrderShipped = "YES"))
                 {
@@ -158,12 +158,12 @@
                 {
                     current_color = 'red';
                 }
-                
-                var marker = L.marker(L.latLng(parseFloat(jsonDataObject[j].Latitude), parseFloat(jsonDataObject[j].Longitude)),{color: 'red',});
+                */
+                var marker = L.marker(L.latLng(parseFloat(jsonDataObject[j].Latitude), parseFloat(jsonDataObject[j].Longitude)),{color: 'red'}).addTo(map);
                 marker.bindPopup(jsonDataObject[j].City, {
                         autoClose: false
                 });
-                map.addLayer(marker);
+                //map.addLayer(marker);
                 marker.on('click', onClick_Marker)
                 // Attach the corresponding JSON data to your marker:
                 marker.myJsonData =jsonDataObject[j];
