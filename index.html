@@ -159,7 +159,7 @@
                     current_color = 'red';
                 }
                 
-                var marker = L.marker(L.latLng(parseFloat(jsonDataObject[j].Latitude), parseFloat(jsonDataObject[j].Longitude)),{color: current_color,});
+                var marker = L.marker(L.latLng(parseFloat(jsonDataObject[j].Latitude), parseFloat(jsonDataObject[j].Longitude)),{color: 'red',});
                 marker.bindPopup(jsonDataObject[j].City, {
                         autoClose: false
                 });
