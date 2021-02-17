@@ -144,6 +144,8 @@
             jsonDataObject.push(json_data);
                 
             for (var j = 0; j < jsonDataObject.length; j++) {
+                
+                
                 /*
                 var current_color = '';
                 if ((jsonDataObject[j].OrderDispatched = "YES")&&(jsonDataObject[j].OrderShipped = "YES"))
@@ -159,13 +161,11 @@
                     current_color = 'red';
                 }
                 */
-                var myIcon = L.icon({
-                                    color: 'green',
-                                });
-
+               
 
                 
-                var marker = L.marker(L.latLng(parseFloat(jsonDataObject[j].Latitude), parseFloat(jsonDataObject[j].Longitude)),{icon: myIcon});
+                var marker = L.marker(L.latLng(parseFloat(jsonDataObject[j].Latitude), parseFloat(jsonDataObject[j].Longitude)));
+                marker.valueOf()._icon.style.backgroundColor = 'green';
                 marker.bindPopup(jsonDataObject[j].City, {
                         autoClose: false
                 });
