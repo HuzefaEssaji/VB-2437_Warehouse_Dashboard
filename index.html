@@ -150,11 +150,11 @@
                 {
                     current_color = 'green';
                 }
-                elseif((jsonDataObject[j].OrderDispatched = "YES")&&(jsonDataObject[j].OrderShipped = "NO"))
+                else if((jsonDataObject[j].OrderDispatched = "YES")&&(jsonDataObject[j].OrderShipped = "NO"))
                 {
                     current_color = 'yellow';
                 }
-                elseif((jsonDataObject[j].OrderDispatched = "NO")&&(jsonDataObject[j].OrderShipped = "NO"))
+                else if((jsonDataObject[j].OrderDispatched = "NO")&&(jsonDataObject[j].OrderShipped = "NO"))
                 {
                     current_color = 'red';
                 }
