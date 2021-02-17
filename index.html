@@ -165,11 +165,11 @@
 
 
                 
-                var marker = L.marker(L.latLng(parseFloat(jsonDataObject[j].Latitude), parseFloat(jsonDataObject[j].Longitude)),{icon: myIcon}).addTo(map);
+                var marker = L.marker(L.latLng(parseFloat(jsonDataObject[j].Latitude), parseFloat(jsonDataObject[j].Longitude)),{icon: myIcon});
                 marker.bindPopup(jsonDataObject[j].City, {
                         autoClose: false
                 });
-                //map.addLayer(marker);
+                map.addLayer(marker);
                 marker.on('click', onClick_Marker)
                 // Attach the corresponding JSON data to your marker:
                 marker.myJsonData =jsonDataObject[j];
