@@ -144,7 +144,22 @@
             jsonDataObject.push(json_data);
                 
             for (var j = 0; j < jsonDataObject.length; j++) {
-                var marker = L.marker(L.latLng(parseFloat(jsonDataObject[j].Latitude), parseFloat(jsonDataObject[j].Longitude)));
+                
+                var current_color = '';
+                if ((jsonDataObject[j].OrderDispatched = "YES")&&(jsonDataObject[j].OrderShipped = "YES"))
+                {
+                    current_color = 'green';
+                }
+                elseif((jsonDataObject[j].OrderDispatched = "YES")&&(jsonDataObject[j].OrderShipped = "NO"))
+                {
+                    current_color = 'yellow';
+                }
+                elseif((jsonDataObject[j].OrderDispatched = "NO")&&(jsonDataObject[j].OrderShipped = "NO"))
+                {
+                    current_color = 'red';
+                }
+                
+                var marker = L.marker(L.latLng(parseFloat(jsonDataObject[j].Latitude), parseFloat(jsonDataObject[j].Longitude)),{color: current_color,});
                 marker.bindPopup(jsonDataObject[j].City, {
                         autoClose: false
                 });
