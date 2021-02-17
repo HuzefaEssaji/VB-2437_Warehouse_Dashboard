@@ -117,7 +117,7 @@
         refreshMap();
     
         // Fetch every 5 second
-        setInterval(refreshMap, 5000);
+        setInterval(refreshMap, 50000);
     });
 
     function refreshMap(){
@@ -157,7 +157,7 @@
                         var marker = e.target;
                         popup = L.popup()
                         .setLatLng(marker.getLatLng())
-                        .setContent("Order ID: " + marker.myJsonData.OderID + " || Order Dispatched: " +   marker.myJsonData.OrderDispatched + " || Order Shipped: " + marker.myJsonData.OrderShipped )
+                        .setContent("Order ID: " + marker.myJsonData.OderID + " || Dispatched: " +   marker.myJsonData.OrderDispatched + " || Shipped: " + marker.myJsonData.OrderShipped )
                         .openOn(map);
                     }
 
